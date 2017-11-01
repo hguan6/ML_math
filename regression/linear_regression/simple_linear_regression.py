@@ -56,11 +56,11 @@ def stochastic_gradient_decent(theta,data,learning_rate=1e-5,number_of_steps=500
         theta_monitor(theta, j)
     return theta
 
-def plot():
-    fig =
+# def plot():
+#     fig =
 
 if __name__ == '__main__':
-    dataset_whole = pd.read_csv('../../dataset/LOL/stat1s.csv',index_col=False,usecols=['goldearned','goldspent'])
+    dataset_whole = pd.read_csv('../../dataset/LOL/stats1.csv',index_col=False,usecols=['goldearned','goldspent'])
     ## Normalize the data
     # dataset = dataset_whole.head(5000)/10000
     dataset = dataset_whole/10000
