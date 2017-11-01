@@ -56,9 +56,11 @@ def stochastic_gradient_decent(theta,data,learning_rate=1e-5,number_of_steps=500
         theta_monitor(theta, j)
     return theta
 
+def plot():
+    fig =
 
 if __name__ == '__main__':
-    dataset_whole = pd.read_csv('/home/michael/Documents/CS/Machine_Learning/ML_math/dataset/LOL/stat1s_2cols.csv')
+    dataset_whole = pd.read_csv('../../dataset/LOL/stat1s.csv',index_col=False,usecols=['goldearned','goldspent'])
     ## Normalize the data
     # dataset = dataset_whole.head(5000)/10000
     dataset = dataset_whole/10000
@@ -68,15 +70,15 @@ if __name__ == '__main__':
     ## If learning rate is bigger than some value, the variables will diverge
     ## threshold is learning_rate * 1e2
 
-    theta = [0.0, 0.0]
-    print("theta_0:{0:f}  theta_1:{1:f}".format(theta[0], theta[1]))
-    print("MSE before: {:f}\n".format(calculate_MSE(theta,data)))
-
-    start_time = time.time()
-    theta = batch_gradient_decent(theta,data,learning_rate=1e-7,threshold=-5)
-    print("Batch gradient decent use time: {}".format(time.time()-start_time))
-    print("theta_0:{0:f}  theta_1:{1:f}".format(theta[0], theta[1]))
-    print("MSE after: {:f}\n".format(calculate_MSE(theta,data)))
+    # theta = [0.0, 0.0]
+    # print("theta_0:{0:f}  theta_1:{1:f}".format(theta[0], theta[1]))
+    # print("MSE before: {:f}\n".format(calculate_MSE(theta,data)))
+    #
+    # start_time = time.time()
+    # theta = batch_gradient_decent(theta,data,learning_rate=1e-7,threshold=-5)
+    # print("Batch gradient decent use time: {}".format(time.time()-start_time))
+    # print("theta_0:{0:f}  theta_1:{1:f}".format(theta[0], theta[1]))
+    # print("MSE after: {:f}\n".format(calculate_MSE(theta,data)))
 
     theta = [0.0, 0.0]
     print("theta_0:{0:f}  theta_1:{1:f}".format(theta[0], theta[1]))
