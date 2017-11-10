@@ -44,7 +44,7 @@ def stochastic_gradient_decent(theta,data,learning_rate=1e-5,number_of_steps=500
     for j in range(number_of_steps):
         partial_derivative = [0.0,0.0]
         theta_old=theta
-        for i in range(len(dataset)):
+        for i in range(len(data)):
             partial_derivative[0] = data[i,1]-theta[0]-theta[1]*data[i,0]
             partial_derivative[1] = (data[i,1]-theta[0]-theta[1]*data[i,0])*data[i,0]
 
