@@ -74,3 +74,5 @@ if __name__ == '__main__':
     print('theta after training:')
     print_theta(theta)
     print('Precision: {}'.format(calculate_precision(data,theta)))
+
+    # Precision is around 0.8224
