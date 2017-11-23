@@ -3,6 +3,7 @@ Due to the complexity of numerical computation of SVM, sklearn is used as the le
 """
 
 import multiprocessing as mp
+import numpy as np
 import pandas as pd
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import StratifiedShuffleSplit
@@ -117,6 +118,6 @@ if __name__ == '__main__':
     # print('coef of clf_4: {}'.format(clf_4.coef_))
     # print('intercept of clf_4: {}\n'.format(clf_4.intercept_))
 
-    train_score, test_score, coef_, intercept_ = train_and_test(X_train, X_test, y_train, y_test, C=0.1)
+    train_score, test_score, coef_, intercept_ = train_and_test(np.concatenate((X_train,X_cv),axis=0), X_test, np.concatenate((y_train,y_cv),axis=0), y_test, C=0.1)
     print('train score is {}, test score is {}'.format(train_score, test_score))
     print('coefficient is: {}, interception is: {}'.format(coef_, intercept_))
