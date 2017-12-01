@@ -1,5 +1,7 @@
 """
 Due to the complexity of numerical computation of SVM, sklearn is used as the learning library,
+
+Data available from https://www.kaggle.com/paololol/league-of-legends-ranked-matches/data
 """
 
 import multiprocessing as mp
